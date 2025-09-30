@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import ErrorPage from "../views/ErrorPage.vue";
 
 const routes = [
   {
@@ -20,6 +21,12 @@ const routes = [
     path: "/contacto",
     name: "Contacto",
     component: () => import("../views/Contacto.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: ErrorPage,
+    props: { code: 404, message: "Página no encontrada" },
   },
 ];
 
