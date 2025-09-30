@@ -1,43 +1,47 @@
 <template>
-  <div>
-    <div>
-      <h3>{{ estacion.nombre }}</h3>
-      <div 
-        :style="{ backgroundColor: getMarkerColor(estacion) }"
-      >
+  <div class="bg-white shadow rounded-lg p-4 space-y-4 max-w-md mx-auto">
+
+    <!-- Título y estado -->
+    <div class="flex items-center justify-between">
+      <h3 class="text-lg font-semibold text-gray-800">{{ estacion.nombre }}</h3>
+      <div :style="{ backgroundColor: getMarkerColor(estacion) }"
+        class="text-white px-3 py-1 rounded-full text-sm font-medium">
         {{ getEstadoTexto(estacion) }}
       </div>
     </div>
-    
-    <div>
+
+    <!-- Comuna y Región -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700">
       <p><strong>Comuna:</strong> {{ estacion.comuna }}</p>
       <p><strong>Región:</strong> {{ estacion.region }}</p>
     </div>
-    
-    <div v-if="estacion.realtime && estacion.realtime[0]">
-      <div>
-        <h4>
-          {{ estacion.realtime[0].name }} - Estado Actual
-        </h4>
-        <div>
-          <div>
-            <span>{{ getCurrentValue(estacion) }}</span>
-            <span>µg/m³</span>
-          </div>
-          <div>
-            <div>ICAP</div>
-            <div>{{ getCurrentICAP(estacion) }}</div>
-          </div>
+
+    <!-- Datos en tiempo real -->
+    <div v-if="estacion.realtime && estacion.realtime[0]" class="bg-gray-50 p-3 rounded-md shadow-inner space-y-2">
+      <h4 class="font-medium text-gray-700">{{ estacion.realtime[0].name }} - Estado Actual</h4>
+
+      <div class="flex items-center justify-between">
+        <div class="text-2xl font-bold text-gray-800">
+          {{ getCurrentValue(estacion) }}
+          <span class="text-sm font-normal">µg/m³</span>
         </div>
-        <div>
-          Última actualización: {{ estacion.realtime[0].datetime }}
+        <div class="text-right">
+          <div class="text-sm text-gray-500">ICAP</div>
+          <div class="font-medium text-gray-800">{{ getCurrentICAP(estacion) }}</div>
         </div>
       </div>
-    </div>     
-    <div>
+
+      <div class="text-xs text-gray-400">
+        Última actualización: {{ estacion.realtime[0].datetime }}
+      </div>
+    </div>
+
+    <!-- Red y Empresa -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-700">
       <p><strong>Red:</strong> {{ estacion.red }}</p>
       <p><strong>Empresa:</strong> {{ estacion.empresa }}</p>
     </div>
+
   </div>
 </template>
 
@@ -79,31 +83,25 @@ const props = defineProps<{
   }
 }>()
 
-// Funciones para obtener color del marcador según estado
 const getMarkerColor = (estacion: any) => {
   if (!estacion.realtime || !estacion.realtime[0] || !estacion.realtime[0].tableRow) {
     return '#9CA3AF'
   }
-  
-  const color = estacion.realtime[0].tableRow.color
-  return color || '#9CA3AF'
+  return estacion.realtime[0].tableRow.color || '#9CA3AF'
 }
 
-// Obtener texto del estado
 const getEstadoTexto = (estacion: any) => {
   if (!estacion.realtime || !estacion.realtime[0]) return 'Sin datos'
   return estacion.realtime[0].tableRow?.status || 'Sin datos'
 }
 
-// Obtener valor actual
 const getCurrentValue = (estacion: any) => {
   if (!estacion.realtime || !estacion.realtime[0]) return 'N/A'
-  return estacion.realtime[0].tableRow?.value || 'N/A'
+  return estacion.realtime[0].tableRow?.value ?? 'N/A'
 }
 
-// Obtener ICAP actual
 const getCurrentICAP = (estacion: any) => {
   if (!estacion.realtime || !estacion.realtime[0]) return 'N/A'
-  return estacion.realtime[0].tableRow?.icap || 'N/A'
+  return estacion.realtime[0].tableRow?.icap ?? 'N/A'
 }
 </script>
