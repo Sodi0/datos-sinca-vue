@@ -18,9 +18,7 @@
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/Sodi0/datos-sinca-vue
-
-.git
+   git clone https://github.com/Sodi0/datos-sinca-vue.git
    ```
 2. Entra a la carpeta del proyecto:
    ```bash
