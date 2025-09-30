@@ -6,10 +6,11 @@
 
 ## Tecnologías utilizadas
 
-- **Vue 3** – Framework progresivo de JavaScript para construir interfaces de usuario.
-- **Vite** – Herramienta de build rápida y ligera para proyectos modernos de frontend.
-- **Tailwind CSS** – Framework de utilidades CSS para un diseño rápido y responsivo.
-- **API SINCA** – Fuente pública de datos de calidad del aire en Chile.
+- **Vue 3** - Framework progresivo de JavaScript para construir interfaces de usuario.
+- **Vite** - Herramienta de build rápida y ligera para proyectos modernos de frontend.
+- **Tailwind CSS** - Framework de utilidades CSS para un diseño rápido y responsivo.
+- **API SINCA** - Fuente pública de datos de calidad del aire en Chile.
+- **Netlify** - Para Despligle 
 
 ---
 
