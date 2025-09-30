@@ -1,6 +1,6 @@
-# Chile Respira
+# Visualizacion de datos SINCA
 
-**Chile Respira** es un proyecto educativo desarrollado para mejorar habilidades en frontend, utilizando Vue 3, Vite y Tailwind CSS. El objetivo es ofrecer una plataforma que permita consultar y visualizar datos de calidad del aire en Chile, aprovechando la API pública del SINCA (Sistema de Información Nacional de Calidad del Aire).
+**Visualizacion de datos SINCA** es un proyecto educativo desarrollado para mejorar habilidades en frontend, utilizando Vue 3, Vite y Tailwind CSS. El objetivo es ofrecer una plataforma que permita consultar y visualizar datos de calidad del aire en Chile, aprovechando la API pública del SINCA (Sistema de Información Nacional de Calidad del Aire).
 
 ---
 
@@ -18,11 +18,11 @@
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/Sodi0/chile-respira-vue.git
+   git clone https://github.com/Sodi0/datos-sinca-vue.git
    ```
 2. Entra a la carpeta del proyecto:
    ```bash
-   cd chile-respira
+   cd datos-sinca-vue
    ```
 3. Instala las dependencias:
    ```bash
