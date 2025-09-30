@@ -15,7 +15,7 @@
                     <span class="sr-only">Buscar zona</span>
                     <input type="text" id="search" v-model="searchQuery"
                         placeholder="Buscar por zona, comuna o región..."
-                        class="h-12 w-full rounded-lg border-2 pl-2 border-gray-200 shadow-sm bg-gray-50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                        class="h-12 w-full rounded-lg border-2 pl-2 border-gray-200 shadow-sm  focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
                         @input="filterStations" />
                 </label>
 
