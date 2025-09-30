@@ -45,6 +45,6 @@
 
 <script setup lang="ts">
 defineProps<{
-    station: any;
+    station: Record<string, any>;
 }>();
 </script>
