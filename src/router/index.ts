@@ -1,16 +1,16 @@
 import { createRouter, createWebHistory } from "vue-router";
-import ErrorPage from "../views/ErrorPage.vue";
+import ErrorPage from "@/views/ErrorPage.vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: () => import("../views/Home.vue"),
+    component: () => import("@/views/Home.vue"),
   },
   {
     path: "/mapa",
     name: "Mapa",
-    component: () => import("../views/Mapa.vue"),
+    component: () => import("@/views/Mapa.vue"),
   },
   {
     path: "/estadisticas",
