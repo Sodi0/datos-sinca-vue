@@ -13,6 +13,7 @@
                     Accede a información actualizada de estaciones de monitoreo en todo el país.
                     Consulta niveles de contaminación, alertas ambientales y cuida tu salud respiratoria.
                 </p>
+                <BadgeDatos />
             </div>
 
             <!-- Búsqueda -->
@@ -72,6 +73,7 @@
 import { computed } from 'vue'
 import MapaEstaciones from '../components/MapaEstaciones.vue'
 import { useEstaciones } from '../api/useEstaciones'
+import BadgeDatos from '../components/BadgeDatos.vue'
 
 const { searchQuery, filteredStations, loading, error, filterStations } = useEstaciones()
 

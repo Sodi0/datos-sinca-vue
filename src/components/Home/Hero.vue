@@ -70,6 +70,7 @@
                         <div class="mt-1 text-sm text-gray-600">Regiones</div>
                     </div>
                 </div>
+                <BadgeDatos />
             </div>
         </div>
     </section>
@@ -78,6 +79,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useEstaciones } from '../../api/useEstaciones';
+import BadgeDatos from '../BadgeDatos.vue';
 
 const { filteredStations } = useEstaciones();
 
