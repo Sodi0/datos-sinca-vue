@@ -13,11 +13,6 @@ const routes = [
     component: () => import("@/views/Mapa.vue"),
   },
   {
-    path: "/estadisticas",
-    name: "Estadisticas",
-    component: () => import("../views/Estadisticas.vue"),
-  },
-  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: ErrorPage,
