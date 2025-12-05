@@ -18,12 +18,6 @@
           <RouterLink to="/mapa" class="text-gray-700 hover:text-blue-600 transition" title="Ver mapa">
             Mapa
           </RouterLink>
-          <RouterLink to="/estadisticas" class="text-gray-700 hover:text-blue-600 transition" title="Ver estadísticas">
-            Estadísticas
-          </RouterLink>
-          <RouterLink to="/contacto" class="text-gray-700 hover:text-blue-600 transition" title="Contáctanos">
-            Contacto
-          </RouterLink>
         </nav>
 
         <!-- Menú móvil -->
@@ -54,16 +48,6 @@
                   class="block py-3 px-2 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded transition"
                   title="Ver mapa" @click="menuOpen = false">
                   Mapa
-                </RouterLink>
-                <RouterLink to="/estadisticas"
-                  class="block py-3 px-2 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded transition"
-                  title="Ver estadísticas" @click="menuOpen = false">
-                  Estadísticas
-                </RouterLink>
-                <RouterLink to="/contacto"
-                  class="block py-3 px-2 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded transition"
-                  title="Contáctanos" @click="menuOpen = false">
-                  Contacto
                 </RouterLink>
               </nav>
             </div>
