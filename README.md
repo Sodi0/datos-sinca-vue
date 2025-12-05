@@ -21,44 +21,54 @@
 
 ---
 
-## Instalación
+## Ejecución local
 
-1. Clona este repositorio:
+Para probar la aplicación localmente:
 
-   ```bash
-   git clone https://github.com/Sodi0/datos-sinca-vue.git
-   ```
-2. Entra a la carpeta del proyecto:
-   ```bash
-   cd datos-sinca-vue
-   ```
-3. Instala las dependencias:
-   ```bash
-   npm install
-   ```
-4. Inicia el servidor de desarrollo:
-   ```bash
-   npm run dev
-   ```
-5. Abre el navegador en http://localhost:5173 (o el puerto que indique Vite).
-
-## Uso
-La aplicación permite:
-
-1. **Seleccionar una región** de Chile desde el menú principal
-2. **Visualizar datos actuales** de calidad del aire
-3. **Consultar indicadores** como:
-   - PM2.5 (Material particulado fino)
-   - PM10 (Material particulado respirable)
-   - O₃ (Ozono)
-   - CO (Monóxido de carbono)
-   - NO₂ (Dióxido de nitrógeno)
-   - SO₂ (Dióxido de azufre)
+```bash
+git clone https://github.com/Sodi0/datos-sinca-vue.git
+cd datos-sinca-vue
+npm install
+npm run dev
+# Abrir http://localhost:5173
+```
 
 ## Demo en vivo
+[Despliegue en vivo](https://calidadairechile.netlify.app/)
 
-- [Ver aplicación desplegada en Netlify](https://calidadairechile.netlify.app/)
+![Demo](./src/assets/demo.gif)
+---
+
+## Qué puedes ver en la app
+
+- Mapa interactivo con estaciones coloreadas según su estado actual.
+- Tarjetas y sparklines que muestran la tendencia reciente de cada estación.
+- Buscador por nombre, comuna o región.
+- Información por contaminante (PM2.5, PM10, O3, NO2, CO, SO2) cuando está disponible.
+
+---
+
+## Decisiones técnicas y notas (para quien revise el código)
+
+- Mantengo la aplicación ligera y sin base de datos remota: los datos se obtienen directamente de la API SINCA y se mantienen en memoria en el cliente.
+- `src/api/sinca.ts` contiene la llamada a la API; `src/api/useEstaciones.ts` transforma y filtra las estaciones.
+- Recomendación: añadir `lastUpdated` y polling (cada 2–5 minutos) para mostrar la frescura de los datos y mantenerlos actualizados.
+- Si se necesitara historial o compartir estado entre vistas, se puede añadir `IndexedDB` o un store con `Pinia`.
+
+---
+
+## Deploy
+
+Para construir:
+
+```bash
+npm run build
+```
+
+Netlify o Vercel detectan proyectos Vite y permiten despliegue directo.
+
+---
 
 ## Licencia
 
-Este proyecto está bajo la licencia MIT — consulta el archivo LICENSE para más detalles.
+Este proyecto está bajo la licencia MIT — ver `LICENSE`.
