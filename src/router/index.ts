@@ -18,11 +18,6 @@ const routes = [
     component: () => import("../views/Estadisticas.vue"),
   },
   {
-    path: "/contacto",
-    name: "Contacto",
-    component: () => import("../views/Contacto.vue"),
-  },
-  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: ErrorPage,
